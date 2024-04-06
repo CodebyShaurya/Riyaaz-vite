@@ -129,6 +129,7 @@ function Home() {
             instrument and skill level.
           </div>
         </div>
+      </div>
 
 
         <div className='text-[#0a183d]  pt-28 pb-14 '>
@@ -425,6 +426,7 @@ function Home() {
           </div>
         </div>
       </footer>
+    </div>
     </div>
   );
 }
