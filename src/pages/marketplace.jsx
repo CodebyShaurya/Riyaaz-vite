@@ -68,7 +68,7 @@ function MarketPlace() {
   ]
   
   return (
-    <div className="bg-white">
+    <div className="bg-[#0a183d]">
       <Navbar/>
     <div className="mx-auto max-w-2xl px-4 py-16 sm:px-6 sm:py-24 lg:max-w-7xl lg:px-8">
       <h2 className="sr-only">Products</h2>
@@ -80,7 +80,7 @@ function MarketPlace() {
               <img
                 src={product.imageSrc}
                 alt={product.imageAlt}
-                className="h-full w-full object-cover object-center group-hover:opacity-75"
+                className="h-[300px] w-[300px] object-cover object-center group-hover:opacity-75"
               />
             </div>
             <h3 className="mt-4 text-sm text-gray-700">{product.name}</h3>
