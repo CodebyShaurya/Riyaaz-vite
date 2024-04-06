@@ -1,6 +1,7 @@
 import { Fragment, useState } from "react";
 import { Dialog, Disclosure, Popover, Transition } from "@headlessui/react";
 import logo from "../assets/White logo - no background.png";
+import { useAuth0 } from "@auth0/auth0-react";
 // import './nav.css';
 import {
   ArrowPathIcon,
@@ -61,6 +62,8 @@ function classNames(...classes) {
 
 export default function Navbar() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const { user, loginWithRedirect, isAuthenticated, logout } = useAuth0();
+  console.log(user);
 
   return (
     <header className="nav z-10 text-white sticky">
@@ -159,21 +162,39 @@ export default function Navbar() {
           >
             Marketplace
           </Link>
-          <Link
-            to="/learn"
-            className="text-lg font-semibold leading-6 text-white"
-          >
-            Learn
-          </Link>
+          {isAuthenticated ? (
+            <Link
+              to="/learn"
+              className="text-lg font-semibold leading-6 text-white"
+            >
+              Learn
+            </Link>
+          ) : (
+            <></>
+          )}
         </Popover.Group>
-        <div className="hidden lg:flex lg:flex-1 lg:justify-end">
-          <a
-            href="#"
-            className="text-lg  font-semibold leading-6 text-white rounded py-2.5 px-2.5 hover:py-3.5 hover:px-3.5"
-          >
-            Log in <span aria-hidden="true">&rarr;</span>
-          </a>
-        </div>
+        {isAuthenticated ? (
+          <div className="hidden lg:flex lg:flex-1 lg:justify-end">
+            <div className="flex items-center justify-center text-lg">
+              <p>Welcome! {user.name}</p>
+            </div>
+            <button
+              className="text-lg font-semibold leading-6 text-white rounded py-2.5 px-2.5 hover:text-gray-200"
+              onClick={(e) => logout()}
+            >
+              Logout
+            </button>
+          </div>
+        ) : (
+          <div className="hidden lg:flex lg:flex-1 lg:justify-end">
+            <button
+              className="text-lg font-semibold leading-6 text-white rounded py-2.5 px-2.5 hover:text-gray-200"
+              onClick={(e) => loginWithRedirect()}
+            >
+              Login
+            </button>
+          </div>
+        )}
       </nav>
       <Dialog
         as="div"
@@ -186,11 +207,7 @@ export default function Navbar() {
           <div className="flex items-center justify-between">
             <a href="" className="-m-1.5 p-1.5">
               <span className="sr-only">Your Company</span>
-              <img
-                className="h-12 w-auto"
-                src={logo}
-                alt="Riyaaz"
-              />
+              <img className="h-12 w-auto" src={logo} alt="Riyaaz" />
             </a>
             <button
               type="button"
