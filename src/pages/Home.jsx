@@ -10,64 +10,15 @@ import pic3 from '../assets/3.jpg';
 import pic4 from '../assets/4.jpeg';
 import bullet from '../assets/pointer.webp';
 import logo from '../assets/White logo - no background.png'
+import Chatbot from '../components/bot'
+
 
 function Home() {
 
   return (
     <div>
       <Navbar />
-                    {/* <div className="fixed bottom-0 right-0 m-4">
-                        {!isOpen && (
-                            <button
-                            className="bg-blue-500 hover:bg-blue-600 text-white font-semibold py-2 px-4 rounded-full shadow"
-                            onClick={toggleChat}
-                            >
-                            Chat with Bot
-                            </button>
-                        )}
-                        {isOpen && (
-                            <div className="bg-white border border-gray-300 rounded-lg shadow-lg w-80">
-                            <div className="flex justify-between items-center px-4 py-2 border-b border-gray-300">
-                                <p className="font-semibold">Music Bot</p>
-                                <button onClick={handleClose}>
-                                <svg
-                                    className="h-4 w-4 fill-current text-gray-600 hover:text-gray-800"
-                                    xmlns="http://www.w3.org/2000/svg"
-                                    viewBox="0 0 20 20"
-                                >
-                                    <path
-                                    fillRule="evenodd"
-                                    d="M10 8.586l3.293-3.293a1 1 0 111.414 1.414L11.414 10l3.293 3.293a1 1 0 11-1.414 1.414L10 11.414l-3.293 3.293a1 1 0 01-1.414-1.414L8.586 10 5.293 6.707a1 1 0 111.414-1.414L10 8.586z"
-                                    clipRule="evenodd"
-                                    />
-                                </svg>
-                                </button>
-                            </div>
-                            <div className="p-4 h-40 overflow-y-auto">
-                                {messages.map((message, index) => (
-                                <div key={index} className={`mb-2 ${message.fromUser ? 'text-right' : 'text-left'}`}>
-                                    <p className={`p-2 rounded-lg ${message.fromUser ? 'bg-blue-100 text-blue-900' : 'bg-gray-100 text-gray-900'}`}>
-                                    {message.text}
-                                    </p>
-                                </div>
-                                ))}
-                            </div>
-                            <div className="p-4 border-t border-gray-300">
-                                <input
-                                type="text"
-                                placeholder="Type your message..."
-                                className="w-full border border-gray-300 rounded-lg px-2 py-1 focus:outline-none focus:border-blue-500"
-                                onKeyDown={(e) => {
-                                    if (e.key === 'Enter') {
-                                    handleSendMessage(e.target.value);
-                                    e.target.value = '';
-                                    }
-                                }}
-                                />
-                            </div>
-                            </div>
-                        )}
-                        </div> */}
+                   
       <div className="bg-[#0a183d] grid grid-cols-2 text-center pt-32 pb-20 text-white">
         <div>
           <h1 className="text-7xl px-8 font-semibold">
@@ -285,7 +236,7 @@ function Home() {
         </div> */}
 
       <hr />
-
+        <Chatbot/>
       <footer class="bg-[#0a183d] dark:bg-gray-900">
         <div class="mx-auto w-full max-w-screen-xl p-4 py-6 lg:py-8">
           <div class="md:flex md:justify-between">
