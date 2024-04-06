@@ -19,7 +19,7 @@ function Home() {
         {/* Hero Section*/}
         <div className='bg-[#0a183d] grid grid-cols-2 text-center pt-32 pb-20 text-white'>
           <div>           
-            <h1 className='text-7xl px-8 font-semibold'> Unleash Your Inner  <span className='text-[#fc0254]'>Musician</span>  with <br/> AI-Powered Learning .</h1>    
+            <h1 className='text-7xl px-8 font-semibold'> Unleash Your Inner  <span className='text-[#fc0254]'>Musician</span>  with <br/> AI-Powered Learning </h1>    
                 
             <div className='px-32'><br/>Do you dream of achieving proficiency and fluency in your musical journey? Look no further – Riyaaz is here to revolutionize your practice sessions and propel your skills to new heights!
 
