@@ -8,7 +8,8 @@ import pic1 from '../assets/1.jpg.webp';
 import pic2 from '../assets/2.jpg.webp';
 import pic3 from '../assets/3.jpg.webp';
 import pic4 from '../assets/4.jpg.webp';
-import bullet from '../assets/pointer.webp'
+import bullet from '../assets/pointer.webp';
+import logo from '../assets/White logo - no background.png'
 
 function Home() {
   return (
@@ -18,10 +19,10 @@ function Home() {
         {/* Hero Section*/}
         <div className='bg-[#0a183d] grid grid-cols-2 text-center pt-32 pb-20 text-white'>
           <div>           
-            <h1 className='text-8xl font-semibold'> <span className='text-[#fc0254]'>Music</span> for <br/> everyone.</h1>    
+            <h1 className='text-7xl font-semibold'> Unleash Your Inner  <span className='text-[#fc0254]'>Musician</span>  with AI-Powered Learning .</h1>    
                 
-            <div className='px-32'><br/>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
-                      Quis ipsum suspendisse ultrices gravida.
+            <div className='px-32'><br/>Do you dream of achieving proficiency and fluency in your musical journey? Look no further – Riyaaz is here to revolutionize your practice sessions and propel your skills to new heights!
+
             </div>
             
           </div>
@@ -33,14 +34,12 @@ function Home() {
         {/* 100 tracks*/}
 
         <div className='grid grid-cols-2 text-center py-32 text-[#0a183d]'>
-            <div className='text-7xl font-semibold px-24  '>
-                <h2>Unlimited Access to 100K tracks</h2>
+            <div className='text-5xl font-semibold px-24  '>
+                <h2>Ready to Elevate Your Musical Journey? Why Wait? Experience Riyaaz Today</h2>
             </div>
 
             <div className='text-xl pr-24'>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis ipsum sus-pendisse ultrices gravida. 
-                Risus commodo viverra maecenas accumsan lacus vel facilisis. 
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis ipsum suspendisse ultrices gravida.<br/><br/>
+            Say goodbye to aimless repetition and hello to purposeful, results-driven practice. With Riyaaz, each session is an opportunity for growth, guided by real-time feedback and personalized insights. Elevate your playing, refine your technique, and ignite your passion for music like never before.<br/><br/>
                 <a className='bg-[#fc0254] text-white p-5 m-10 rounded-xl' href='#'>TRY IT NOW</a>
             </div>
 
@@ -78,8 +77,9 @@ function Home() {
                         Create an account
                       </div>
                       <div className='pr-20 pt-6 text-xl text-gray-500'>
-                          Lorem ipsum dolor sit amet, consectetur adipi-scing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
-                          Quis ipsum sus-pendisse ultrices gravida.
+                      Sign up now to access exclusive features and resources designed to enhance your musical journey. Whether you're a beginner or a seasoned musician, our platform offers tools to help you learn, create, and connect with others who share your passion for music.
+
+
                       </div>
                   </div>
 
@@ -90,8 +90,8 @@ function Home() {
                         Choose a plan
                       </div>
                       <div className='pr-20 pt-6 text-xl text-gray-500'>
-                          Lorem ipsum dolor sit amet, consectetur adipi-scing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
-                          Quis ipsum sus-pendisse ultrices gravida.
+                      Unlock unlimited access to our library of music lessons, tutorials, and interactive exercises by choosing a subscription plan that fits your needs. Whether you want to master an instrument, refine your skills, or explore new genres, we have a plan for you.
+
                       </div>
                       
                   </div>
@@ -100,11 +100,11 @@ function Home() {
                   <div className=''>
                       <img src={phone}/>
                       <div className='font-semibold mt-6 text-3xl'>
-                        Create an account
+                            Collaborate
+
                       </div>
                       <div className='pr-20 pt-6 text-xl text-gray-500'>
-                          Lorem ipsum dolor sit amet, consectetur adipi-scing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
-                          Quis ipsum sus-pendisse ultrices gravida.
+                      Join our community of music enthusiasts today and start discovering, creating, and sharing your passion for music. With a free account, you'll gain access to personalized recommendations, curated playlists, and exclusive content.
                       </div>
                   </div>
                 
@@ -116,9 +116,8 @@ function Home() {
 
           <div className='grid grid-cols-2'>
           <div className='pl-28 font-semibold text-7xl '>Our Concept & artists</div>
-          <div className='pr-28 text-lg'>Consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
-                            Quis ipsum suspendisse ultrices gravida. Risus commodo viverra maecenas accumsan lacus vel facilisis. 
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+          <div className='pr-28 text-lg'>Our concept revolves around leveraging cutting-edge machine learning technology to enhance musical experiences across various instruments. Whether you're a pianist, guitarist, violinist, drummer, or play any other instrument, our ML model is designed to provide personalized feedback and guidance tailored to your specific instrument and skill level.
+
           </div>
           </div>
             
@@ -232,9 +231,9 @@ function Home() {
             <div class="mx-auto w-full max-w-screen-xl p-4 py-6 lg:py-8">
                 <div class="md:flex md:justify-between">
                   <div class="mb-6 md:mb-0">
-                      <a href="https://flowbite.com/" class="flex items-center">
-                          <img src="https://flowbite.com/docs/images/logo.svg" class="h-8 me-3" alt="FlowBite Logo" />
-                          <span class="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">Flowbite</span>
+                      <a href="/" class="flex items-center">
+                          <img src={logo} class="h-8 me-3" alt="Riyaaz Logo" />
+                          <span class="self-center text-2xl font-semibold whitespace-nowrap text-white">Riyaaz</span>
                       </a>
                   </div>
                   <div class="grid grid-cols-2 gap-8 sm:gap-6 sm:grid-cols-3">
@@ -242,7 +241,7 @@ function Home() {
                           <h2 class="mb-6 text-sm font-semibold text-white uppercase dark:text-white">Resources</h2>
                           <ul class="text-gray-500 dark:text-gray-400 font-medium">
                               <li class="mb-4">
-                                  <a href="https://flowbite.com/" class="hover:underline">Flowbite</a>
+                                  <a href="/" className="hover:underline">Riyaaz</a>
                               </li>
                               <li>
                                   <a href="https://tailwindcss.com/" class="hover:underline">Tailwind CSS</a>
@@ -253,7 +252,7 @@ function Home() {
                           <h2 class="mb-6 text-sm font-semibold text-white uppercase dark:text-white">Follow us</h2>
                           <ul class="text-gray-500 dark:text-gray-400 font-medium">
                               <li class="mb-4">
-                                  <a href="https://github.com/themesberg/flowbite" class="hover:underline ">Github</a>
+                                  <a href="https://github.com/CodebyShaurya/Riyaaz-vite" class="hover:underline ">Github</a>
                               </li>
                               <li>
                                   <a href="https://discord.gg/4eeurUVvTy" class="hover:underline">Discord</a>
@@ -275,7 +274,7 @@ function Home() {
               </div>
               <hr class="my-6 border-gray-200 sm:mx-auto dark:border-gray-700 lg:my-8" />
               <div class="sm:flex sm:items-center sm:justify-between">
-                  <span class="text-sm text-gray-500 sm:text-center dark:text-gray-400">© 2023 <a href="https://flowbite.com/" class="hover:underline">Flowbite™</a>. All Rights Reserved.
+                  <span class="text-sm text-gray-500 sm:text-center dark:text-gray-400">© 2023 <a href="/" class="hover:underline">Riyaaz™</a>. All Rights Reserved.
                   </span>
                   <div class="flex mt-4 sm:justify-center sm:mt-0">
                       <a href="#" class="text-gray-500 hover:text-gray-900 dark:hover:text-white">
