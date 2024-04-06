@@ -198,7 +198,7 @@ const Learnings = () => {
             {/* <div className="h-[100%] min-w-[400px] border-2 border-black rounded-sm"></div> */}
           </div>
         </div>
-        <div className="w-[25vw]  bg-[#D5D5D5] overflow-y-scroll p-4 flex flex-col gap-2">
+        <div className="w-[25vw]  bg-[#D5D5D5] p-4 flex flex-col gap-2">
           <div className="bg-[#09183D] p-4 rounded-md flex justify-between">
             <div className="flex gap-4">
               <div className="text-white">1.</div>
