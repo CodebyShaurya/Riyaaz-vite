@@ -182,11 +182,11 @@ const Learnings = () => {
                 </div>
               </div>
               <div>
-                <img
+                {<img onClick={this.fetchVoice}
                   src={audioControls}
                   alt="Audio Controls"
-                  className="h-[40px] w-[200px]"
-                />
+                  className="h-[60px] w-[60px]"
+                />}
               </div>
             </div>
           </div>
