@@ -1,86 +1,147 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import "../index.css";
 import Navbar from "../components/Navbar";
 import handOnGuitar from "../assets/HandOnGuitar.png";
 import audioSymbol from "../assets/AudioSymbol.png";
 import audioControls from "../assets/AudioControls.png";
 
+const Learnings = () => {
+  // constructor(props) {
+  //     super(props);
+  //     this.state = {
+  //         record: false,
+  //         mic: 'OFF',
+  //         listen: 'Listen',
+  //         wordData: null,
+  //         output: null,
+  //         transcripts: ['', '', ''],
+  //         percentages: ['', '', ''],
+  //         showButton: false,
+  //         averageCalculation: false,
+  //         average: null,
+  //         improvization: false,
+  //         improvizationData : null
+  //     };
+  // }
 
+  const [record, setRecord] = useState(false);
+  const [mic, setMic] = useState("OFF");
+  const [listen, setListen] = useState("Listen");
+  // const [wordData, setWordData] = useState(null);
+  const [output, setOutput] = useState(null);
+  const [transcripts, setTranscripts] = useState(["", "", ""]);
+  const [percentages, setPercentages] = useState(["", "", ""]);
+  const [showButton, setShowButton] = useState(false);
+  // const [averageCalculation, setAverageCalculation] = useState(false);
+  // const [average, setAverage] = useState(null);
+  // const [improvization, setImprovization] = useState(false);
+  // const [improvizationData, setImprovizationData] = useState(null);
 
-class Learnings extends React.Component {
-  constructor(props) {
-      super(props);
-      this.state = {
-          record: false,
-          mic: 'OFF',
-          listen: 'Listen',
-          wordData: null,
-          output: null,
-          transcripts: ['', '', ''],
-          percentages: ['', '', ''],
-          showButton: false,
-          averageCalculation: false,
-          average: null,
-          improvization: false,
-          improvizationData : null
-      };
-  }
+  // const fetchVoice = () => {
+  //   this.setState({ record: true });
+  //   this.setState({ listen: "Listening" });
+  //   this.setState({ transcript: "First Attempt" });
+  //   this.setState({ percentage: "" });
+  //   console.log("try");
+  //   fetch("http://localhost:5000/record", {
+  //     method: "GET",
+  //   })
+  //     .then((response) => {
+  //       if (!response.ok) {
+  //         this.setState({ record: false });
+  //         this.setState({ listen: "Listen" });
+  //         throw new Error("Error");
+  //       }
 
-  
-  fetchVoice = () => {
-      this.setState({ record: true });
-      this.setState({ listen: 'Listening' })
-      this.setState({ transcript: "First Attempt" })
-      this.setState({ percentage: "" })
-      console.log('try')
-      fetch('http://localhost:5000/record', {
-          method: 'GET',
+  //       return response.json();
+  //     })
+  //     .then((data) => {
+  //       setOutput(data);
+  //       setRecord(false);
+  //       setListen("Listen");
+  //       // this.setState({ transcript: data.transcript });
+  //       // this.setState({ percentage: data.percentage });
+  //       // console.log(data);
+  //       const updatedTranscripts = [...this.state.transcripts];
+  //       const updatedPercentages = [...this.state.percentages];
+
+  //       const index = updatedTranscripts.findIndex(
+  //         (transcript) => transcript === ""
+  //       );
+  //       if (index !== -1) {
+  //         updatedTranscripts[index] = data.transcript;
+  //         updatedPercentages[index] = data.percentage;
+
+  //         this.setState({
+  //           transcripts: updatedTranscripts,
+  //           percentages: updatedPercentages,
+  //         });
+
+  //         const allFilled = updatedTranscripts.every(
+  //           (transcript) => transcript !== ""
+  //         );
+  //         if (allFilled) {
+  //           this.setState({ showButton: true });
+  //         }
+  //       }
+  //     })
+  //     .catch((error) => {
+  //       console.error("Problem detected", error);
+  //     });
+
+  //   console.log("try2");
+  // };
+
+  const fetchVoice = () => {
+    setRecord(true);
+    setListen("Listening");
+    setTranscripts(["First Attempt", "", ""]); // Assuming you have an array of length 3 for transcripts
+    setPercentages(["", "", ""]); // Assuming you have an array of length 3 for percentages
+    console.log("try");
+    fetch("http://localhost:5000/record", {
+      method: "GET",
+    })
+      .then((response) => {
+        if (!response.ok) {
+          setRecord(false);
+          setListen("Listen");
+          throw new Error("Error");
+        }
+        return response.json();
       })
-          .then(response => {
-              if (!response.ok) {
-                  this.setState({ record: false });
-                  this.setState({ listen: 'Listen' });
-                  throw new Error('Error');
-              }
+      .then((data) => {
+        setOutput(data);
+        setRecord(false);
+        setListen("Listen");
 
-              return response.json();
-          })
-          .then(data => {
-              this.setState({ output: data });
-              this.setState({ record: false });
-              this.setState({ listen: 'Listen' });
-              // this.setState({ transcript: data.transcript });
-              // this.setState({ percentage: data.percentage });
-              // console.log(data);
-              const updatedTranscripts = [...this.state.transcripts];
-              const updatedPercentages = [...this.state.percentages];
+        const updatedTranscripts = [...transcripts];
+        const updatedPercentages = [...percentages];
 
-              const index = updatedTranscripts.findIndex(transcript => transcript === '');
-              if (index !== -1) {
-                  updatedTranscripts[index] = data.transcript;
-                  updatedPercentages[index] = data.percentage;
+        const index = updatedTranscripts.findIndex(
+          (transcript) => transcript === ""
+        );
+        if (index !== -1) {
+          updatedTranscripts[index] = data.transcript;
+          updatedPercentages[index] = data.percentage;
 
-                  this.setState({
-                      transcripts: updatedTranscripts,
-                      percentages: updatedPercentages,
-                  });
+          setTranscripts(updatedTranscripts);
+          setPercentages(updatedPercentages);
 
-                  const allFilled = updatedTranscripts.every(transcript => transcript !== '');
-                  if (allFilled) {
-                      this.setState({ showButton: true });
-                  }
-              }
-          })
-          .catch(error => {
-              console.error('Problem detected', error);
-          });
+          const allFilled = updatedTranscripts.every(
+            (transcript) => transcript !== ""
+          );
+          if (allFilled) {
+            setShowButton(true);
+          }
+        }
+      })
+      .catch((error) => {
+        console.error("Problem detected", error);
+      });
 
-      console.log('try2')
-  }
+    console.log("try2");
+  };
 
-
-
-  render() {
   return (
     <div>
       <Navbar />
@@ -104,11 +165,21 @@ class Learnings extends React.Component {
                 />
               </div>
               <div>
-                <img
+                {/* <img
                   src={audioSymbol}
                   alt="Symbol of Audio"
                   className="h-[50px] w-[400px]"
-                />
+                /> */}
+                <div className="loader">
+                  <div className="stroke"></div>
+                  <div className="stroke"></div>
+                  <div className="stroke"></div>
+                  <div className="stroke"></div>
+                  <div className="stroke"></div>
+                  <div className="stroke"></div>
+                  <div className="stroke"></div>
+                  <div className="stroke"></div>
+                </div>
               </div>
               <div>
                 <img
@@ -266,12 +337,6 @@ class Learnings extends React.Component {
       </div>
     </div>
   );
-
-}
-}
-
-
-
-
+};
 
 export default Learnings;
