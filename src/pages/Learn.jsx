@@ -146,8 +146,8 @@ const Learnings = () => {
     <div>
       <Navbar />
       <div className="flex">
-        <div className="w-[75vw]">
-          <div className="h-[70vh] relative border-2 border-black flex items-center justify-center gap-20 p-4">
+        <div className="w-[75vw] p-10 bg-[#0a183d]">
+          <div className="h-[80vh] bg-white relative border-2 border-black flex items-center justify-center gap-20 p-4">
             <div className="absolute bottom-0 left-2 font-bold text-xl">
               Recommended Videos
             </div>
@@ -170,7 +170,7 @@ const Learnings = () => {
                   alt="Symbol of Audio"
                   className="h-[50px] w-[400px]"
                 /> */}
-                <div className="loader">
+                {record?<div className="loader">
                   <div className="stroke"></div>
                   <div className="stroke"></div>
                   <div className="stroke"></div>
@@ -179,7 +179,8 @@ const Learnings = () => {
                   <div className="stroke"></div>
                   <div className="stroke"></div>
                   <div className="stroke"></div>
-                </div>
+                </div>:<div className="h-[70px] text-white">h</div>}
+                
               </div>
               <div>
                 {<img onClick={fetchVoice}
@@ -190,14 +191,14 @@ const Learnings = () => {
               </div>
             </div>
           </div>
-          <div className="h-[25vh] flex border-black p-2 pr-0 overflow-x-scroll gap-2">
-            <div className="h-[100%] min-w-[400px] border-2 border-black rounded-sm"> <iframe width="400" height="100%" src="https://www.youtube.com/embed/yh6sPqDEZCY" title="Super Easy First Guitar Lesson - Guitar Lessons For Beginners - Stage 1 - The D Chord" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>
-            <div className="h-[100%] min-w-[400px] border-2 border-black rounded-sm"> <iframe width="400" height="100%" src="https://www.youtube.com/embed/8H393ryDkuY" title="E Chord - Easy Third Guitar Chord - Beginner Guitar Lessons Stage 1 - JustinGuitar [BC-113]" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>
-            <div className="h-[100%] min-w-[400px] border-2 border-black rounded-sm"> <iframe width="400" height="100%" src="https://www.youtube.com/embed/gEzwpqmt2gc" title="G Chord - Guitar For Beginners - Stage 3 Guitar Lesson - JustinGuitar [BC-131]" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>
-            <div className="h-[100%] min-w-[400px] border-2 border-black rounded-sm"></div>
+          <div className="h-[25vh] flex border-black p-2 pr-0  gap-2">
+            <div className="h-[100%] min-w-[345px] border-2 border-black rounded-sm"> <iframe width="345" height="100%" src="https://www.youtube.com/embed/yh6sPqDEZCY" title="Super Easy First Guitar Lesson - Guitar Lessons For Beginners - Stage 1 - The D Chord" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>
+            <div className="h-[100%] min-w-[345px] border-2 border-black rounded-sm"> <iframe width="345" height="100%" src="https://www.youtube.com/embed/8H393ryDkuY" title="E Chord - Easy Third Guitar Chord - Beginner Guitar Lessons Stage 1 - JustinGuitar [BC-113]" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>
+            <div className="h-[100%] min-w-[345px] border-2 border-black rounded-sm"> <iframe width="345" height="100%" src="https://www.youtube.com/embed/gEzwpqmt2gc" title="G Chord - Guitar For Beginners - Stage 3 Guitar Lesson - JustinGuitar [BC-131]" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>
+            {/* <div className="h-[100%] min-w-[400px] border-2 border-black rounded-sm"></div> */}
           </div>
         </div>
-        <div className="w-[25vw] h-[95vh] bg-[#D5D5D5] overflow-y-scroll p-4 flex flex-col gap-2">
+        <div className="w-[25vw]  bg-[#D5D5D5] overflow-y-scroll p-4 flex flex-col gap-2">
           <div className="bg-[#09183D] p-4 rounded-md flex justify-between">
             <div className="flex gap-4">
               <div className="text-white">1.</div>
