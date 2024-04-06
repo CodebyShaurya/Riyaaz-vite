@@ -89,13 +89,13 @@ export default function Navbar() {
         </div>
         <Popover.Group className="hidden lg:flex lg:gap-x-12">
           <Popover className="relative">
-            <Popover.Button className="flex items-center gap-x-1 text-sm font-semibold leading-6 text-white">
+            {/* <Popover.Button className="flex items-center gap-x-1 text-sm font-semibold leading-6 text-white">
               Product
               <ChevronDownIcon
                 className="h-5 w-5 flex-none text-gray-400"
                 aria-hidden="true"
               />
-            </Popover.Button>
+            </Popover.Button> */}
 
             <Transition
               as={Fragment}
@@ -151,10 +151,10 @@ export default function Navbar() {
             </Transition>
           </Popover>
           <Link
-            to="/features"
+            to="/courses"
             className="text-lg font-semibold leading-6 text-white"
           >
-            Features
+            Courses
           </Link>
           <Link
             to="/marketplace"
