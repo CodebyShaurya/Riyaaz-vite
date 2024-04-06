@@ -12,9 +12,62 @@ import bullet from '../assets/pointer.webp';
 import logo from '../assets/White logo - no background.png'
 
 function Home() {
+
   return (
     <div>
       <Navbar />
+                    {/* <div className="fixed bottom-0 right-0 m-4">
+                        {!isOpen && (
+                            <button
+                            className="bg-blue-500 hover:bg-blue-600 text-white font-semibold py-2 px-4 rounded-full shadow"
+                            onClick={toggleChat}
+                            >
+                            Chat with Bot
+                            </button>
+                        )}
+                        {isOpen && (
+                            <div className="bg-white border border-gray-300 rounded-lg shadow-lg w-80">
+                            <div className="flex justify-between items-center px-4 py-2 border-b border-gray-300">
+                                <p className="font-semibold">Music Bot</p>
+                                <button onClick={handleClose}>
+                                <svg
+                                    className="h-4 w-4 fill-current text-gray-600 hover:text-gray-800"
+                                    xmlns="http://www.w3.org/2000/svg"
+                                    viewBox="0 0 20 20"
+                                >
+                                    <path
+                                    fillRule="evenodd"
+                                    d="M10 8.586l3.293-3.293a1 1 0 111.414 1.414L11.414 10l3.293 3.293a1 1 0 11-1.414 1.414L10 11.414l-3.293 3.293a1 1 0 01-1.414-1.414L8.586 10 5.293 6.707a1 1 0 111.414-1.414L10 8.586z"
+                                    clipRule="evenodd"
+                                    />
+                                </svg>
+                                </button>
+                            </div>
+                            <div className="p-4 h-40 overflow-y-auto">
+                                {messages.map((message, index) => (
+                                <div key={index} className={`mb-2 ${message.fromUser ? 'text-right' : 'text-left'}`}>
+                                    <p className={`p-2 rounded-lg ${message.fromUser ? 'bg-blue-100 text-blue-900' : 'bg-gray-100 text-gray-900'}`}>
+                                    {message.text}
+                                    </p>
+                                </div>
+                                ))}
+                            </div>
+                            <div className="p-4 border-t border-gray-300">
+                                <input
+                                type="text"
+                                placeholder="Type your message..."
+                                className="w-full border border-gray-300 rounded-lg px-2 py-1 focus:outline-none focus:border-blue-500"
+                                onKeyDown={(e) => {
+                                    if (e.key === 'Enter') {
+                                    handleSendMessage(e.target.value);
+                                    e.target.value = '';
+                                    }
+                                }}
+                                />
+                            </div>
+                            </div>
+                        )}
+                        </div> */}
       <div className="bg-[#0a183d] grid grid-cols-2 text-center pt-32 pb-20 text-white">
         <div>
           <h1 className="text-7xl px-8 font-semibold">
@@ -115,21 +168,7 @@ function Home() {
         </div>
       </div>
 
-      <div className="text-[#0a183d]  pt-28 pb-14 ">
-        <div className="grid grid-cols-2">
-          <div className="pl-28 font-semibold text-7xl ">
-            Our Concept & artists
-          </div>
-          <div className="pr-28 text-lg">
-            Our concept revolves around leveraging cutting-edge machine learning
-            technology to enhance musical experiences across various
-            instruments. Whether you're a pianist, guitarist, violinist,
-            drummer, or play any other instrument, our ML model is designed to
-            provide personalized feedback and guidance tailored to your specific
-            instrument and skill level.
-          </div>
-        </div>
-      </div>
+      
 
 
         <div className='text-[#0a183d]  pt-28 pb-14 '>
@@ -137,12 +176,9 @@ function Home() {
           <div className='grid grid-cols-2'>
           <div className='pl-28 font-semibold text-7xl '>Our Concept & instruments</div>
           <div className='pr-28 text-lg'>Our concept revolves around leveraging cutting-edge machine learning technology to enhance musical experiences across various instruments. Whether you're a pianist, guitarist, violinist, drummer, or play any other instrument, our ML model is designed to provide personalized feedback and guidance tailored to your specific instrument and skill level.
-
+        </div>
           </div>
-          <div className="content-center text-center">
-            <img src={pic2} className="rounded-3xl" />
-            <div className="pr-20 text-xl font-bold">Live Concert</div>
-          </div>
+         
             
             <div className='grid grid-cols-4 px-32 py-20  content-center'>
                 
@@ -172,7 +208,7 @@ function Home() {
 
                   
                 
-            </div>
+                  </div>  
         </div>
         
         <div className='bg-[#0a183d]  pt-16 pb-10 text-white'>
@@ -426,7 +462,6 @@ function Home() {
           </div>
         </div>
       </footer>
-    </div>
     </div>
   );
 }
