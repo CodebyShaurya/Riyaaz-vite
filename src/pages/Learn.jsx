@@ -5,7 +5,82 @@ import handOnGuitar from "../assets/HandOnGuitar.png";
 import audioSymbol from "../assets/AudioSymbol.png";
 import audioControls from "../assets/AudioControls.png";
 
-function Learn() {
+
+
+class Learnings extends React.Component {
+  constructor(props) {
+      super(props);
+      this.state = {
+          record: false,
+          mic: 'OFF',
+          listen: 'Listen',
+          wordData: null,
+          output: null,
+          transcripts: ['', '', ''],
+          percentages: ['', '', ''],
+          showButton: false,
+          averageCalculation: false,
+          average: null,
+          improvization: false,
+          improvizationData : null
+      };
+  }
+
+  
+  fetchVoice = () => {
+      this.setState({ record: true });
+      this.setState({ listen: 'Listening' })
+      this.setState({ transcript: "First Attempt" })
+      this.setState({ percentage: "" })
+      console.log('try')
+      fetch('http://localhost:5000/record', {
+          method: 'GET',
+      })
+          .then(response => {
+              if (!response.ok) {
+                  this.setState({ record: false });
+                  this.setState({ listen: 'Listen' });
+                  throw new Error('Error');
+              }
+
+              return response.json();
+          })
+          .then(data => {
+              this.setState({ output: data });
+              this.setState({ record: false });
+              this.setState({ listen: 'Listen' });
+              // this.setState({ transcript: data.transcript });
+              // this.setState({ percentage: data.percentage });
+              // console.log(data);
+              const updatedTranscripts = [...this.state.transcripts];
+              const updatedPercentages = [...this.state.percentages];
+
+              const index = updatedTranscripts.findIndex(transcript => transcript === '');
+              if (index !== -1) {
+                  updatedTranscripts[index] = data.transcript;
+                  updatedPercentages[index] = data.percentage;
+
+                  this.setState({
+                      transcripts: updatedTranscripts,
+                      percentages: updatedPercentages,
+                  });
+
+                  const allFilled = updatedTranscripts.every(transcript => transcript !== '');
+                  if (allFilled) {
+                      this.setState({ showButton: true });
+                  }
+              }
+          })
+          .catch(error => {
+              console.error('Problem detected', error);
+          });
+
+      console.log('try2')
+  }
+
+
+
+  render() {
   return (
     <div>
       <Navbar />
@@ -191,6 +266,12 @@ function Learn() {
       </div>
     </div>
   );
+
+}
 }
 
-export default Learn;
+
+
+
+
+export default Learnings;
