@@ -1,15 +1,15 @@
-import React from "react";
-import Navbar from "../components/Navbar";
-import heroimg from "../assets/hero-bg.png.webp";
-import brain from "../assets/brain.png.webp";
-import pointer from "../assets/pointer.png.webp";
-import phone from "../assets/smartphone.png.webp";
-import pic1 from "../assets/1.jpg.webp";
-import pic2 from "../assets/2.jpg.webp";
-import pic3 from "../assets/3.jpg.webp";
-import pic4 from "../assets/4.jpg.webp";
-import bullet from "../assets/pointer.webp";
-import logo from "../assets/White logo - no background.png";
+import React from 'react'
+import Navbar from '../components/Navbar'
+import heroimg from '../assets/hero-bg.png.webp'
+import brain from '../assets/brain.png.webp'
+import pointer from '../assets/pointer.png.webp'
+import phone from '../assets/smartphone.png.webp';
+import pic1 from '../assets/1.jpg';
+import pic2 from '../assets/2.jpg';
+import pic3 from '../assets/3.jpg';
+import pic4 from '../assets/4.jpeg';
+import bullet from '../assets/pointer.webp';
+import logo from '../assets/White logo - no background.png'
 
 function Home() {
   return (
@@ -130,82 +130,80 @@ function Home() {
           </div>
         </div>
 
-        <div className="grid grid-cols-4 px-32 py-20  content-center">
-          <div className="content-center text-center">
-            <img src={pic1} className="rounded-3xl" />
-            <div className="pr-20 text-xl font-bold">Soul Music</div>
+
+        <div className='text-[#0a183d]  pt-28 pb-14 '>
+
+          <div className='grid grid-cols-2'>
+          <div className='pl-28 font-semibold text-7xl '>Our Concept & instruments</div>
+          <div className='pr-28 text-lg'>Our concept revolves around leveraging cutting-edge machine learning technology to enhance musical experiences across various instruments. Whether you're a pianist, guitarist, violinist, drummer, or play any other instrument, our ML model is designed to provide personalized feedback and guidance tailored to your specific instrument and skill level.
+
           </div>
           <div className="content-center text-center">
             <img src={pic2} className="rounded-3xl" />
             <div className="pr-20 text-xl font-bold">Live Concert</div>
           </div>
+            
+            <div className='grid grid-cols-4 px-32 py-20  content-center'>
+                
+                  <div className='content-center text-center'>
+                      <img src={pic1}  className='rounded-3xl w-[267px] h-[253px]'/>
+                      <div className='pr-20 text-xl font-bold'>Guitar</div>
+                  </div>
+                  <div className='content-center text-center'>
+                      <img src={pic2}  className='rounded-3xl w-[267px] h-[253px]'/>
+                      <div className='pr-20 text-xl font-bold'>Piano</div>
+                  </div>
 
-          <div className="content-center text-center">
-            <img src={pic3} className="rounded-3xl" />
-            <div className="pr-20 text-xl font-bold">Dj Sets</div>
-          </div>
 
-          <div className="content-center text-center">
-            <img src={pic4} className="rounded-3xl" />
-            <div className="pr-20 text-xl font-bold">Live Streams</div>
-          </div>
+                  <div className='content-center text-center'>
+                      <img src={pic3}  className='rounded-3xl w-[267px] h-[253px]'/>
+                      <div className='pr-20 text-xl font-bold'>Djembe</div>
+                  </div>
+
+                  <div className='content-center text-center'>
+                      <img src={pic4}  className='rounded-3xl w-[267px] h-[253px]'/>
+                      <div className='pr-20 text-xl font-bold'>Drums</div>
+                  </div>
+
+
+                  
+
+
+                  
+                
+            </div>
         </div>
-      </div>
+        
+        <div className='bg-[#0a183d]  pt-16 pb-10 text-white'>
+            
+            <div className='grid grid-cols-2 px-32 py-10  content-center'>
+              <div>
+                <div className='pl-28 text-6xl text-white'>Subscription from ₹15/month</div>
+                <div className='pl-28 py-6 text-2xl font-semibold text-[#fc0254]'>Start a free trial now</div>
+                <div className='pl-28 pt-6 text-xl text-gray-500'>Consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+                                                                  Quis ipsum suspendisse ultrices gravida. Risus commodo viverra maecenas accumsan lacus vel facilisis. 
+                                                                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</div>
+              </div>
+              <div className='mx-10 bg-[#1c294a] rounded-3xl pt-16 pb-10 pl-32'>
+                <ul>
+                  <li className='flex'> <img className='w-6 h-4 mt-4' src={bullet}/> <div className='pl-6 py-2 text-xl'>Play any track</div> </li>
+                  <li className='flex pt-2'> <img className='w-6 h-4 mt-4' src={bullet}/> <div className='pl-6 py-2 text-xl'>Listen offline</div> </li>
+                  <li className='flex pt-2'> <img className='w-6 h-4 mt-4' src={bullet}/> <div className='pl-6 py-2 text-xl'>No ad interruptions</div> </li>
+                  <li className='flex pt-2'> <img className='w-6 h-4 mt-4' src={bullet}/> <div className='pl-6 py-2 text-xl'>Unlimited skips</div> </li>
+                  <li className='flex pt-2'> <img className='w-6 h-4 mt-4' src={bullet}/> <div className='pl-6 py-2 text-xl'>High quality audio</div> </li>
+                  <li className='flex pt-2'> <img className='w-6 h-4 mt-4' src={bullet}/> <div className='pl-6 py-2 text-xl'>Shuffle play</div> </li>
+                </ul>
+              </div>
+              
+            
+                
+                  
 
-      <div className="bg-[#0a183d]  pt-16 pb-10 text-white">
-        <div className="grid grid-cols-2 px-32 py-10  content-center">
-          <div>
-            <div className="pl-28 text-6xl text-white">
-              Subscription from $15/month
+
+                  
+                
             </div>
-            <div className="pl-28 py-6 text-2xl font-semibold text-[#fc0254]">
-              Start a free trial now
-            </div>
-            <div className="pl-28 pt-6 text-xl text-gray-500">
-              Consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
-              labore et dolore magna aliqua. Quis ipsum suspendisse ultrices
-              gravida. Risus commodo viverra maecenas accumsan lacus vel
-              facilisis. Lorem ipsum dolor sit amet, consectetur adipiscing
-              elit, sed do eiusmod tempor incididunt ut labore et dolore magna
-              aliqua.
-            </div>
-          </div>
-          <div className="mx-10 bg-[#1c294a] rounded-3xl pt-16 pb-10 pl-32">
-            <ul>
-              <li className="flex">
-                {" "}
-                <img className="w-6 h-4 mt-4" src={bullet} />{" "}
-                <div className="pl-6 py-2 text-xl">Play any track</div>{" "}
-              </li>
-              <li className="flex pt-2">
-                {" "}
-                <img className="w-6 h-4 mt-4" src={bullet} />{" "}
-                <div className="pl-6 py-2 text-xl">Listen offline</div>{" "}
-              </li>
-              <li className="flex pt-2">
-                {" "}
-                <img className="w-6 h-4 mt-4" src={bullet} />{" "}
-                <div className="pl-6 py-2 text-xl">No ad interruptions</div>{" "}
-              </li>
-              <li className="flex pt-2">
-                {" "}
-                <img className="w-6 h-4 mt-4" src={bullet} />{" "}
-                <div className="pl-6 py-2 text-xl">Unlimited skips</div>{" "}
-              </li>
-              <li className="flex pt-2">
-                {" "}
-                <img className="w-6 h-4 mt-4" src={bullet} />{" "}
-                <div className="pl-6 py-2 text-xl">High quality audio</div>{" "}
-              </li>
-              <li className="flex pt-2">
-                {" "}
-                <img className="w-6 h-4 mt-4" src={bullet} />{" "}
-                <div className="pl-6 py-2 text-xl">Shuffle play</div>{" "}
-              </li>
-            </ul>
-          </div>
         </div>
-      </div>
 
       {/* 
         <div className='text-[#0a183d]  pt-28 pb-14 '>
