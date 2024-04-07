@@ -19,6 +19,22 @@
   animation: animate 1.2s linear infinite;
 }
 
+.loader2 {
+  height: 70px;
+  display: flex;
+  align-items: center;
+}
+
+.loader2 .stroke2 {
+  display: block;
+  position: relative;
+  background: black;
+  height: 100%;
+  width: 10px;
+  border-radius: 50px;
+  margin: 0 5px;
+}
+
 @keyframes animate {
   50% {
     height: 20%;

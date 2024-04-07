@@ -4,26 +4,9 @@ import Navbar from "../components/Navbar";
 import handOnGuitar from "../assets/HandOnGuitar.png";
 import audioSymbol from "../assets/AudioSymbol.png";
 import audioControls from "../assets/AudioControls.png";
+import playButton from "../assets/PlayButton.png";
 
 const Learnings = () => {
-  // constructor(props) {
-  //     super(props);
-  //     this.state = {
-  //         record: false,
-  //         mic: 'OFF',
-  //         listen: 'Listen',
-  //         wordData: null,
-  //         output: null,
-  //         transcripts: ['', '', ''],
-  //         percentages: ['', '', ''],
-  //         showButton: false,
-  //         averageCalculation: false,
-  //         average: null,
-  //         improvization: false,
-  //         improvizationData : null
-  //     };
-  // }
-
   const [record, setRecord] = useState(false);
   const [mic, setMic] = useState("OFF");
   const [listen, setListen] = useState("Listen");
@@ -32,65 +15,6 @@ const Learnings = () => {
   const [transcripts, setTranscripts] = useState(["", "", ""]);
   const [percentages, setPercentages] = useState(["", "", ""]);
   const [showButton, setShowButton] = useState(false);
-  // const [averageCalculation, setAverageCalculation] = useState(false);
-  // const [average, setAverage] = useState(null);
-  // const [improvization, setImprovization] = useState(false);
-  // const [improvizationData, setImprovizationData] = useState(null);
-
-  // const fetchVoice = () => {
-  //   this.setState({ record: true });
-  //   this.setState({ listen: "Listening" });
-  //   this.setState({ transcript: "First Attempt" });
-  //   this.setState({ percentage: "" });
-  //   console.log("try");
-  //   fetch("http://localhost:5000/record", {
-  //     method: "GET",
-  //   })
-  //     .then((response) => {
-  //       if (!response.ok) {
-  //         this.setState({ record: false });
-  //         this.setState({ listen: "Listen" });
-  //         throw new Error("Error");
-  //       }
-
-  //       return response.json();
-  //     })
-  //     .then((data) => {
-  //       setOutput(data);
-  //       setRecord(false);
-  //       setListen("Listen");
-  //       // this.setState({ transcript: data.transcript });
-  //       // this.setState({ percentage: data.percentage });
-  //       // console.log(data);
-  //       const updatedTranscripts = [...this.state.transcripts];
-  //       const updatedPercentages = [...this.state.percentages];
-
-  //       const index = updatedTranscripts.findIndex(
-  //         (transcript) => transcript === ""
-  //       );
-  //       if (index !== -1) {
-  //         updatedTranscripts[index] = data.transcript;
-  //         updatedPercentages[index] = data.percentage;
-
-  //         this.setState({
-  //           transcripts: updatedTranscripts,
-  //           percentages: updatedPercentages,
-  //         });
-
-  //         const allFilled = updatedTranscripts.every(
-  //           (transcript) => transcript !== ""
-  //         );
-  //         if (allFilled) {
-  //           this.setState({ showButton: true });
-  //         }
-  //       }
-  //     })
-  //     .catch((error) => {
-  //       console.error("Problem detected", error);
-  //     });
-
-  //   console.log("try2");
-  // };
 
   const fetchVoice = () => {
     setRecord(true);
@@ -135,8 +59,10 @@ const Learnings = () => {
           }
         }
       })
-      .catch((error) => {
-        console.error("Problem detected", error);
+      .finally(() => {
+        setTimeout(() => {
+          setRecord(false);
+        }, 4000);
       });
 
     console.log("try2");
@@ -170,31 +96,91 @@ const Learnings = () => {
                   alt="Symbol of Audio"
                   className="h-[50px] w-[400px]"
                 /> */}
-                {record?<div className="loader">
-                  <div className="stroke"></div>
-                  <div className="stroke"></div>
-                  <div className="stroke"></div>
-                  <div className="stroke"></div>
-                  <div className="stroke"></div>
-                  <div className="stroke"></div>
-                  <div className="stroke"></div>
-                  <div className="stroke"></div>
-                </div>:<div className="h-[70px] text-white">h</div>}
-                
+                {record ? (
+                  <div className="loader">
+                    <div className="stroke"></div>
+                    <div className="stroke"></div>
+                    <div className="stroke"></div>
+                    <div className="stroke"></div>
+                    <div className="stroke"></div>
+                    <div className="stroke"></div>
+                    <div className="stroke"></div>
+                    <div className="stroke"></div>
+                  </div>
+                ) : (
+                  <div className="loader2">
+                    <div className="stroke2"></div>
+                    <div className="stroke2"></div>
+                    <div className="stroke2"></div>
+                    <div className="stroke2"></div>
+                    <div className="stroke2"></div>
+                    <div className="stroke2"></div>
+                    <div className="stroke2"></div>
+                    <div className="stroke2"></div>
+                  </div>
+                )}
               </div>
               <div>
-                {<img onClick={fetchVoice}
-                  src={audioControls}
-                  alt="Audio Controls"
-                  className="h-[60px] w-[60px]"
-                />}
+                { record ? (
+                  <img
+                    src={audioControls}
+                    alt="Audio Controls"
+                    id="audioControls"
+                    className="h-[60px] w-[60px]"
+                  />
+                ) : (
+                  <img
+                    onClick={fetchVoice}
+                    src={playButton}
+                    alt="Audio Controls"
+                    id="audioControls"
+                    className="h-[60px] w-[60px]"
+                  />
+                )
+                }
               </div>
             </div>
           </div>
           <div className="h-[25vh] flex border-black p-2 pr-0  gap-2">
-            <div className="h-[100%] min-w-[345px] border-2 border-black rounded-sm"> <iframe width="345" height="100%" src="https://www.youtube.com/embed/yh6sPqDEZCY" title="Super Easy First Guitar Lesson - Guitar Lessons For Beginners - Stage 1 - The D Chord" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>
-            <div className="h-[100%] min-w-[345px] border-2 border-black rounded-sm"> <iframe width="345" height="100%" src="https://www.youtube.com/embed/8H393ryDkuY" title="E Chord - Easy Third Guitar Chord - Beginner Guitar Lessons Stage 1 - JustinGuitar [BC-113]" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>
-            <div className="h-[100%] min-w-[345px] border-2 border-black rounded-sm"> <iframe width="345" height="100%" src="https://www.youtube.com/embed/gEzwpqmt2gc" title="G Chord - Guitar For Beginners - Stage 3 Guitar Lesson - JustinGuitar [BC-131]" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>
+            <div className="h-[100%] min-w-[345px] border-2 border-black rounded-sm">
+              {" "}
+              <iframe
+                width="345"
+                height="100%"
+                src="https://www.youtube.com/embed/yh6sPqDEZCY"
+                title="Super Easy First Guitar Lesson - Guitar Lessons For Beginners - Stage 1 - The D Chord"
+                frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                referrerpolicy="strict-origin-when-cross-origin"
+                allowfullscreen
+              ></iframe>
+            </div>
+            <div className="h-[100%] min-w-[345px] border-2 border-black rounded-sm">
+              {" "}
+              <iframe
+                width="345"
+                height="100%"
+                src="https://www.youtube.com/embed/8H393ryDkuY"
+                title="E Chord - Easy Third Guitar Chord - Beginner Guitar Lessons Stage 1 - JustinGuitar [BC-113]"
+                frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                referrerpolicy="strict-origin-when-cross-origin"
+                allowfullscreen
+              ></iframe>
+            </div>
+            <div className="h-[100%] min-w-[345px] border-2 border-black rounded-sm">
+              {" "}
+              <iframe
+                width="345"
+                height="100%"
+                src="https://www.youtube.com/embed/gEzwpqmt2gc"
+                title="G Chord - Guitar For Beginners - Stage 3 Guitar Lesson - JustinGuitar [BC-131]"
+                frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                referrerpolicy="strict-origin-when-cross-origin"
+                allowfullscreen
+              ></iframe>
+            </div>
             {/* <div className="h-[100%] min-w-[400px] border-2 border-black rounded-sm"></div> */}
           </div>
         </div>
